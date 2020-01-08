@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2> Search concepts </h2>
+        <form action="/search/{{username}}/" method="get">
+            <input type="text" name="q"><br>
+            <input type="submit" value="Search"><br>
+        </form>
+    <h3> Your recommended concepts (ordered from most likely for you to like to least likely): </h3>
+    {% for concept in result %}
+        <p> <b>{{concept[0]}}:</b> ({{concept[1]}} resource) {{concept[2]}} <a href="http://35.227.74.174:8111/review/{{username}}/" onclick="window.open('{{concept[3]}};')">{{concept[3]}}</a></p>
+    {% endfor %}
+    <h3>NOTE: If a link does not work, delete the semi colon at the end of the URL and refresh the page. </h3>
+{% endblock %}
