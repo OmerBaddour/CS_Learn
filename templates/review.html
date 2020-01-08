@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2> Review </h2>
+    <form action="" method="post">
+        <p>
+            {{form.rating.label}}<br>
+            {{form.rating(size=3)}}
+        </p>
+        <p>
+            {{form.url.label}}<br>
+            {{form.url(size=256)}}
+        </p>
+        <p>{{form.review()}}</p>
+    </form>
+{% endblock %}

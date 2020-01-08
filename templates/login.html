@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2> Login </h2>
+    <form action="" method="post">
+        <p>
+            {{form.username.label}}<br>
+            {{form.username(size=20)}}
+        </p>
+        <p>
+            {{form.password.label}}<br>
+            {{form.password(size=20)}}
+        </p>
+        <p>{{form.submit()}}</p>
+        <a href="signup">Sign Up</a>
+    </form>
+{% endblock %}
